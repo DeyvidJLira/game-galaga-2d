@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootinProjectileBehaviour : MonoBehaviour
+public class ShootingProjectileBehaviour : MonoBehaviour
 {
     [SerializeField] protected GameObject projectilePrefab;
     [SerializeField] protected float projectileSpeed;
