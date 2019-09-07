@@ -7,6 +7,12 @@ public class MouseInputShipBehaviour : MonoBehaviour {
     protected SpriteRenderer spriteRender;
     protected Vector3 worldDimension;
 
+    protected Rigidbody2D rigidbody;
+
+    private void Awake() {
+        rigidbody = GetComponent<Rigidbody2D>();
+    }
+
     void Start() {
         spriteRender = GetComponent<SpriteRenderer>();
         worldDimension = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
@@ -16,7 +22,7 @@ public class MouseInputShipBehaviour : MonoBehaviour {
     void Update() {
         nextPosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y);
 
-        if (nextPosition.x < (worldDimension.x - spriteRender.size.x/2) && nextPosition.x > (-worldDimension.x + spriteRender.size.x/2))
-        transform.position = nextPosition;
+        if (nextPosition.x < (worldDimension.x - spriteRender.size.x / 2) && nextPosition.x > (-worldDimension.x + spriteRender.size.x / 2))
+            rigidbody.MovePosition(nextPosition);
     }
 }

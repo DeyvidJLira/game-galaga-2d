@@ -8,4 +8,8 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: AlienAAOC
   m_Controller: {fileID: 9100000, guid: 524e1ade26332fc4f8b518b3a81934a3, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95bcdd4ac77f1ca4aa88f12c09536501, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0be4d34366bbb594ab6fd0795d67e11a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ecaa128cf7a5cdb48bdc74ee630f3e0d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 32c44f860aab41542b9b835f719b8bb6, type: 2}
