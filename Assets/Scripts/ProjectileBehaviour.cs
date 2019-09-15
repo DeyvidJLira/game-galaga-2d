@@ -32,12 +32,10 @@ public class ProjectileBehaviour : MonoBehaviour
         rigidbody.velocity = direction * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (Vector2.Distance(startPosition, collision.transform.position) > 3) {
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
     }
-
-
 }

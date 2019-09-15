@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class AlienSimpleMoveBehaviour : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    Animator animator;
+
+    private void Awake() {
+        animator = GetComponent<Animator>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +20,5 @@ public class AlienSimpleMoveBehaviour : MonoBehaviour
         animator.SetTrigger("attack");
 
         Invoke("flyMove", Random.Range(5, 10));
-    }
+    }   
 }
