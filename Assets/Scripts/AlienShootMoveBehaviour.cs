@@ -12,6 +12,9 @@ public class AlienShootMoveBehaviour : MonoBehaviour
 
     public void shoot() {
         projectileTemp = Instantiate(projectilePrefab);
-        projectileTemp.GetComponent<ProjectileBehaviour>().Shoot(alienBody.position, Vector2.down, projectileSpeed);
+        if (alienBody != null)
+            projectileTemp.GetComponent<ProjectileBehaviour>().Shoot(alienBody.position, Vector2.down, projectileSpeed);
+        else
+            Destroy(projectileTemp);
     }
 }

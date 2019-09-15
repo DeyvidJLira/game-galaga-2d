@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 4010067515896899217}
   - component: {fileID: 242483563820254907}
   - component: {fileID: 4484461391032730136}
+  - component: {fileID: 2725304597790415458}
+  - component: {fileID: 8877516503018410689}
   m_Layer: 0
   m_Name: AlienBBody
-  m_TagString: Untagged
+  m_TagString: Alien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,3 +128,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2725304597790415458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9199849715171777263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f442880fb5a7843abe0b58f4797aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8877516503018410689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9199849715171777263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98626d8f54f6bfa4a8dcc878dc98fe61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

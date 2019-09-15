@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    public static GameManager instance;
+
     public enum AlienType { ALIEN_ZAKO, ALIEN_GOEI, ALIEN_BOSS}
 
     [SerializeField] protected Transform formationContent;
@@ -12,6 +15,14 @@ public class GameManager : MonoBehaviour
 
     protected int activeStage = 0;
     protected int aliensCount = 0;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else if (instance != this)
+            Destroy(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +52,7 @@ public class GameManager : MonoBehaviour
             alien.transform.SetParent(item);
             alien.transform.localPosition = Vector3.zero;
         }
+        aliensCount = formation.childCount;
     }
 
     protected GameObject CreateAlienByType(AlienType alienType) {
@@ -52,6 +64,26 @@ public class GameManager : MonoBehaviour
             default:
                 return null;
         }
+    }
+
+    public void onShipHit(Collider2D collider) {
+
+    }
+
+    public void onAlienHit(GameObject alien, Collider2D collider) {
+
+        Destroy(alien);
+
+        Destroy(collider.gameObject);
+
+        aliensCount--;
+
+        if(aliensCount == 0) {
+            Destroy(formationContent.GetChild(0).gameObject);
+            activeStage++;
+            CreateAliensInFormation(MountAlienFormation(activeStage).transform);
+        }
+
     }
 
 }
